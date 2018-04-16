@@ -2,6 +2,83 @@
 
 DreamHouse is a sample application that demonstrates the unique value proposition of the Salesforce App Cloud for building Employee Productivity and Customer Engagement apps.
 
+---
+
+# Salesforce DX Setup
+
+## Initial Setup
+1. Installed Salesforce DX CLI for MacOS
+```
+https://sfdc.co/sfdx_cli_osx
+```
+
+2. Created a DevHub org from 
+```
+https://developer.salesforce.com/promotions/orgs/dx-signup
+```
+
+3. Logged in to DevHub org
+```
+sfdx force:auth:web:login -d -a DevHub
+```
+
+4. Git cloned the following repo
+```
+git clone https://github.com/Gurenax/sfdx-dreamhouse
+cd sfdx-dreamhouse
+```
+
+5. Created a new branch
+```
+git checkout -b my_branch
+```
+
+6. Looked into help for commands
+```
+sfdx force --help
+```
+
+7. Looked into the scratch org config file
+```
+cat config/project-scratch-def.json
+```
+
+8. Created a scratch org
+```
+sfdx force:org:create -s -f config/project-scratch-def.json -a "default scratch org"
+```
+
+9. Opened the scratcg org to a browser
+```
+sfdx force:org:open
+```
+
+## Push Source Metadata to Scratch Org
+1. Pushed all the local source into the scratch org
+```
+sfdx force:source:push
+```
+
+## Assign a Permission Set to the DreamHouse App
+1. Assigned that permset using the CLI
+```
+sfdx force:user:permset:assign -n Dreamhouse
+```
+
+## Import Test Data
+1. Used the CLI and the SObject Tree API to import this Data into the org
+```
+sfdx force:data:tree:import --plan data/sample-data-plan.json
+```
+
+## Test App in the Scratch Org
+```
+sfdx force:org:open
+```
+
+---
+
+
 Check out the [DreamHouse microsite](http://www.dreamhouseapp.io/) for more information.
 
 [![Deploy](https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg)](https://deploy-to-sfdx.com/)
