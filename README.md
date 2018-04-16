@@ -81,6 +81,11 @@ sfdx force:data:tree:import --plan data/sample-data-plan.json
 sfdx force:org:open
 ```
 
+## If you have multiple Scratch Orgs and want to open a specific one
+```
+sfdx force:org:open -u DevHub
+```
+
 ---
 
 
