@@ -12,43 +12,48 @@ DreamHouse is a sample application that demonstrates the unique value propositio
 https://sfdc.co/sfdx_cli_osx
 ```
 
-2. Created a DevHub org from 
+2. Ensure the CLI is using the latest version
+```
+sfdx update
+```
+
+3. Created a DevHub org from 
 ```
 https://developer.salesforce.com/promotions/orgs/dx-signup
 ```
 
-3. Logged in to DevHub org
+4. Logged in to DevHub org
 ```
 sfdx force:auth:web:login -d -a DevHub
 ```
 
-4. Git cloned the following repo
+5. Git cloned the following repo
 ```
 git clone https://github.com/Gurenax/sfdx-dreamhouse
 cd sfdx-dreamhouse
 ```
 
-5. Created a new branch
+6. Created a new branch
 ```
 git checkout -b my_branch
 ```
 
-6. Looked into help for commands
+7. Looked into help for commands
 ```
 sfdx force --help
 ```
 
-7. Looked into the scratch org config file
+8. Looked into the scratch org config file
 ```
 cat config/project-scratch-def.json
 ```
 
-8. Created a scratch org
+9. Created a scratch org
 ```
 sfdx force:org:create -s -f config/project-scratch-def.json -a "default scratch org"
 ```
 
-9. Opened the scratcg org to a browser
+10. Opened the scratcg org to a browser
 ```
 sfdx force:org:open
 ```
